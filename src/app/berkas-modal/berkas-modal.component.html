@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="cancel()">
+        <ion-icon name="close-outline" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-content>
+      <h5 class="bold">Jenis Layanan</h5>
+      <p>{{jns_layanan}}</p>
+      <div class="mb-8"></div>
+      <h5 class="bold">No. Pelayanan</h5>
+      <p>{{nopel}}</p>
+      <div class="mb-8"></div>
+      <h5 class="bold">NOP</h5>
+      <p>{{nop}}</p>
+      <div class="mb-8"></div>
+      <h5 class="bold">Diterima</h5>
+      <p>{{tgl_serah}}</p>
+      <div class="mb-8"></div>
+      <h5 class="bold">Dalam Proses</h5>
+      <p>{{tgl_proses}}</p>
+      <div class="mb-8"></div>
+      <h5 class="bold">Selesai</h5>
+      <p>{{tgl_selesai}}</p>
+      <div class="mb-8"></div>
+      <h5 class="bold">Keterangan</h5>
+      <p>{{ket}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

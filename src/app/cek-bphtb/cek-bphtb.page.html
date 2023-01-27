@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cek BPHTB</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="formNop" (ngSubmit)="cariBphtb()">
+    <div class="dashed-bg m-1">
+      <p class="ion-no-margin">Nomor Pelayanan</p>
+      <ion-grid class="ion-margin-bottom">
+        <ion-row>
+          <ion-col>
+            <ion-list>
+              <ion-item>
+                <ion-input formControlName="tahun" type="text" maxLength="4"></ion-input>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+
+          <ion-col>
+            <ion-list>
+              <ion-item>
+                <ion-input formControlName="nopel" type="text" maxLength="6"></ion-input>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+      <ion-button class="ion-margin-top" expand="block" size="small" type="submit" color="primary"
+        [disabled]="!formNop.valid">Cek
+      </ion-button>
+    </div>
+  </form>
+</ion-content>

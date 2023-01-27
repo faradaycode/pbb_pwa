@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HomePage } from './home.page';
 
-import { HomePageRoutingModule } from './home-routing.module';
+import { IonicModule } from '@ionic/angular';
 
+import { CekBphtbPageRoutingModule } from './cek-bphtb-routing.module';
+
+import { CekBphtbPage } from './cek-bphtb.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule,
+    CekBphtbPageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [HomePage]
+  declarations: [CekBphtbPage]
 })
-export class HomePageModule {}
+export class CekBphtbPageModule {}

@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Hasil Pencarian</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="none">
+    <ion-item class="ion-margin-bottom">
+      <ion-card class="w-100">
+        <ion-item>
+          <ion-avatar slot="start">
+            <img alt="Silhouette of a person's head" src="http://103.51.103.116/idaman/assets/cms/menuchild/PBB_Mobile.png" />
+          </ion-avatar>
+          <ion-label>{{dataPbb[0].KD_PROPINSI + "." + dataPbb[0].KD_DATI2 + "." + dataPbb[0].KD_KECAMATAN + "." +
+            dataPbb[0].KD_KELURAHAN + "." +
+            dataPbb[0].KD_BLOK + "." + dataPbb[0].NO_URUT + "." + dataPbb[0].KD_JNS_OP}}
+          </ion-label>
+        </ion-item>
+      </ion-card>
+    </ion-item>
+    <ion-item *ngFor="let datum of dataPbb">
+      <ion-card class="w-100">
+        <div class="pbb-header">{{datum.THN_PAJAK_SPPT}}</div>
+        <ion-card-content>
+          <ion-grid class="ion-no-padding">
+            <ion-row class="mb5">
+              <ion-col class="ion-no-padding">
+                <h5>Jatuh tempo</h5>
+              </ion-col>
+              <ion-col class="ion-no-padding">
+                <p class="ion-text-end">{{datum.TGL_JATUH_TEMPO}}</p>
+              </ion-col>
+            </ion-row>
+            <ion-row class="mb5">
+              <ion-col class="ion-no-padding">
+                <h5>Pokok</h5>
+              </ion-col>
+              <ion-col class="ion-no-padding">
+                <p class="ion-text-end">{{datum.PBB_YG_HARUS_DIBAYAR_SPPT | currency:'IDR':''}}</p>
+              </ion-col>
+            </ion-row>
+            <ion-row class="ion-margin-bottom">
+              <ion-col class="ion-no-padding">
+                <h5>Denda</h5>
+              </ion-col>
+              <ion-col class="ion-no-padding">
+                <p class="ion-text-end">{{datum.DENDA | currency:'IDR':''}}</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-text color="danger">
+            <h4>{{datum.STATUS}}</h4>
+          </ion-text>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>
